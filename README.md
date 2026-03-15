@@ -2,6 +2,10 @@
 
 This is the Battlecode 2025 Java scaffold, containing an `examplefuncsplayer`. Read https://play.battlecode.org/bc25java/quick_start !
 
+# Penjelasan Singkat Algoritma Greedy
+
+C. Bot "MyBotGweh" 
+Strategi Greedy yang dipilih adalah Local Adaptif dan Priority Based, dengan Heurestik yang fokus Paint Area dan juga Attack low HP. Alasan memilih strategi greedy ini adalah karena setiap unit punya peran masing masing dimana efisiensi mereka sangat bergantung pada situasi dan juga ukuran map. Karena konsep 
 
 ### Project Structure
 
@@ -48,6 +52,22 @@ However, we recommend you make a new bot by copying `examplefuncsplayer` to a ne
 ### Configuration 
 
 Look at `gradle.properties` for project-wide configuration.
+Set teamA, teamB berdasarkan nama bot yang dipilih dari file src
+ex: 
+teamA: billbot
+teamB: laliro
+map: SmallDefault
+
+
+### Langkah-langkah compile/Build
+1.pastikan sudah menjadikan lokasi repo sebagai main directory
+6.Lakukan konfigurasi bot yang dipilih melalui file gradle.properties
+2.jalankan command ./gradlew build
+3.jalankan command ./gradlew run, yang akan menghasilkan replay yang akan disimpan dalam folder matches
+4.buka folder client, jalankan aplikasi Stima Battle Client.exe
+5.dalam aplikasi, pilih "Queue" dan upload file replay dari folder matches sebelumnya.
+
+
 
 If you are having any problems with the default client, please report to teh devs and
 feel free to set the `compatibilityClient` configuration to `true` to download a different version of the client.

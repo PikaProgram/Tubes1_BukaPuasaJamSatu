@@ -50,8 +50,6 @@ public class Soldier {
 
     static boolean needsRefill(RobotController rc) {
         int mapArea = rc.getMapWidth() * rc.getMapHeight();
-        // Large maps rarely hit 80% coverage, so use higher threshold (paint often).
-        // Small/Medium hit 80% coverage within ~50 rounds, so use low threshold (stay on field).
         float threshold = mapArea >= 1600 ? 0.42f : 0.25f;
         return rc.getPaint() < rc.getType().paintCapacity * threshold;
     }
