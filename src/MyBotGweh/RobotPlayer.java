@@ -6,7 +6,7 @@ public class RobotPlayer {
 
     static int turnCount = 0;
     public static void run(RobotController rc) throws GameActionException {
-        System.out.println("I'm alive! Type: " + rc.getType());
+        // System.out.println("I'm alive! Type: " + rc.getType());
 
         while (true) {
             turnCount++;
