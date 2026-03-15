@@ -4,26 +4,27 @@ import battlecode.common.*;
 
 class LeTower {
   static void run(RobotController rc) throws GameActionException {
-    // Attack the lowest HP enemy in range, if any
     if (!rc.isActionReady())
+    {
       return;
-
+    }
+    
+    // Attack the lowest HP enemy in range, if any
     RobotInfo[] enemies = rc.senseNearbyRobots(-1, rc.getTeam().opponent());
-    if (enemies.length == 0)
-      return;
 
-    RobotInfo bestTarget = null;
-    int lowestHP = Integer.MAX_VALUE;
-    for (RobotInfo enemy : enemies) {
-      if (enemy.getHealth() < lowestHP && rc.canAttack(enemy.getLocation())) {
-        lowestHP = enemy.getHealth();
-        bestTarget = enemy;
+    if (enemies.length > 0) {    
+      RobotInfo bestTarget = null;
+      int lowestHP = Integer.MAX_VALUE;
+      for (RobotInfo enemy : enemies) {
+        if (enemy.getHealth() < lowestHP && rc.canAttack(enemy.getLocation())) {
+          lowestHP = enemy.getHealth();
+          bestTarget = enemy;
+        }
+      }
+      if (bestTarget != null) {
+        rc.attack(bestTarget.getLocation());
       }
     }
-    if (bestTarget != null) {
-      rc.attack(bestTarget.getLocation());
-    }
-
     /**
      * Spawn units based on rounds, split into 3 phases:
      * 1. Early (0-200): 65% soldier, 25% mopper, 10% splasher
@@ -57,6 +58,7 @@ class LeTower {
       else
         unitToSpawn = UnitType.MOPPER;
     }
+    System.err.println("Round " + round + ": Attempting to spawn " + unitToSpawn);
 
     // Try to spawn units in direction toward map center
     MapLocation towerLoc = rc.getLocation();
