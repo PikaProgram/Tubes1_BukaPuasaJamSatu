@@ -1,53 +1,37 @@
-# Battlecode 2025 Scaffold - Java
+# BukaPuasaJamSatu
 
-This is the Battlecode 2025 Java scaffold, containing an `examplefuncsplayer`. Read https://play.battlecode.org/bc25java/quick_start !
+Repository ini memiliki 3 bot (satu bot utama dan 2 alternatif) yang digunakan dalam permainan Battlecode 2025
+
+## Penjelasan Singkat Algoritma Greedy
+
+- Bot "MyBotGweh" (Bot utama)\
+Strategi Greedy yang dipilih adalah Local Adaptif dan Priority Based, dengan Heurestik yang fokus Paint Area dan juga Attack low HP. Alasan memilih strategi greedy ini adalah karena setiap unit punya peran masing masing dimana efisiensi mereka sangat bergantung pada situasi dan juga ukuran map. Karena konsep
+- Bot "Laliro"\
+Pendekatan dengan menggunakan algoritma greedy berbasis prioritas berdasarkan sumber daya dengan pemindaian lokal. Aksi tiap robot sudah memiliki prioritas yang terstruktur, tetapi dapat berubah berdasarkan hal-hal di sekitar robot.
+- Bot "billbot"\
+Setiap tipe unit dalam bot menggunakan pendekatan greedy yang sama. Meskipun strateginya konsisten di seluruh program, heuristik spesifiknya berbeda untuk Soldier, Mopper, Splasher, dan Tower.
 
 
-### Project Structure
-
-- `README.md`
-    This file.
-- `build.gradle`
-    The Gradle build file used to build and run players.
-- `src/`
-    Player source code.
-- `test/`
-    Player test code.
-- `client/`
-    Contains the client. The proper executable can be found in this folder (don't move this!)
-- `build/`
-    Contains compiled player code and other artifacts of the build process. Can be safely ignored.
-- `matches/`
-    The output folder for match files.
-- `maps/`
-    The default folder for custom maps.
-- `gradlew`, `gradlew.bat`
-    The Unix (OS X/Linux) and Windows versions, respectively, of the Gradle wrapper. These are nifty scripts that you can execute in a terminal to run the Gradle build tasks of this project. If you aren't planning to do command line development, these can be safely ignored.
-- `gradle/`
-    Contains files used by the Gradle wrapper scripts. Can be safely ignored.
-
-### How to get started
-
-You are free to directly edit `examplefuncsplayer`.
-However, we recommend you make a new bot by copying `examplefuncsplayer` to a new package under the `src` folder.
-
-### Useful Commands
-
-- `./gradlew build`
-    Compiles your player
-- `./gradlew run`
-    Runs a game with the settings in gradle.properties
-- `./gradlew update`
-    Update configurations for the latest version -- run this often
-- `./gradlew zipForSubmit`
-    Create a submittable zip file
-- `./gradlew tasks`
-    See what else you can do!
 
 
 ### Configuration 
 
-Look at `gradle.properties` for project-wide configuration.
+Set teamA, teamB berdasarkan nama bot yang dipilih dari file src\
+ex: \
+teamA: billbot\
+teamB: laliro\
+map: SmallDefault
 
-If you are having any problems with the default client, please report to teh devs and
-feel free to set the `compatibilityClient` configuration to `true` to download a different version of the client.
+
+### Langkah-langkah compile/Build
+1. Pastikan sudah menjadikan lokasi repo sebagai main directory
+2. Lakukan konfigurasi bot yang dipilih melalui file gradle.properties
+3. Jalankan command ./gradlew build
+4. Jalankan command ./gradlew run, yang akan menghasilkan replay yang akan disimpan dalam folder matches
+5.Buka folder client, jalankan aplikasi Stima Battle Client.exe
+6. Dalam aplikasi, pilih "Queue" dan upload file replay dari folder matches sebelumnya.
+
+### Credits
+- 13524121 (Billy Ontoseno Irawan)
+- 13524125 (Muhammad Rafi Akbar)
+- 13524142 (Rasyad Satyatma)
