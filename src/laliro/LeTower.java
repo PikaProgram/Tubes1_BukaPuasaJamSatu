@@ -38,21 +38,24 @@ class LeTower {
     if (round < 200) {
       if (roll < 65)
         unitToSpawn = UnitType.SOLDIER;
-      if (roll < 90)
+      else if (roll < 90)
         unitToSpawn = UnitType.MOPPER;
-      unitToSpawn = UnitType.SPLASHER;
+      else
+        unitToSpawn = UnitType.SPLASHER;
     } else if (round < 800) {
       if (roll < 35)
         unitToSpawn = UnitType.SOLDIER;
-      if (roll < 70)
+      else if (roll < 70)
         unitToSpawn = UnitType.SPLASHER;
-      unitToSpawn = UnitType.MOPPER;
+      else
+        unitToSpawn = UnitType.MOPPER;
     } else {
       if (roll < 20)
         unitToSpawn = UnitType.SOLDIER;
-      if (roll < 70)
+      else if (roll < 70)
         unitToSpawn = UnitType.SPLASHER;
-      unitToSpawn = UnitType.MOPPER;
+      else
+        unitToSpawn = UnitType.MOPPER;
     }
 
     // Try to spawn units in direction toward map center
