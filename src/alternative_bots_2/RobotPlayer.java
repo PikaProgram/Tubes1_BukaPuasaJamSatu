@@ -1,4 +1,4 @@
-package billbot;
+package alternative_bots_2;
 
 import battlecode.common.*;
 import java.util.Random;

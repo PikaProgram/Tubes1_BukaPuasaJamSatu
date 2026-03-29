@@ -1,4 +1,4 @@
-package MyBotGweh;
+package main_bot;
 
 import battlecode.common.*;
 
@@ -14,26 +14,26 @@ public class RobotPlayer {
                 switch (rc.getType()) {
                     // unit
                     case SOLDIER:
-                        MyBotGweh.Units.Soldier.run(rc);
+                        main_bot.Units.Soldier.run(rc);
                         break;
                     case MOPPER:
-                        MyBotGweh.Units.Mopper.run(rc);
+                        main_bot.Units.Mopper.run(rc);
                         break;
                     case SPLASHER:
-                        MyBotGweh.Units.Splasher.run(rc);
+                        main_bot.Units.Splasher.run(rc);
                         break;
 
                     // towers
                     case LEVEL_ONE_PAINT_TOWER:
                     case LEVEL_TWO_PAINT_TOWER:
                     case LEVEL_THREE_PAINT_TOWER:
-                        MyBotGweh.Towers.PaintTower.run(rc);
+                        main_bot.Towers.PaintTower.run(rc);
                         break;
 
                     case LEVEL_ONE_MONEY_TOWER:
                     case LEVEL_TWO_MONEY_TOWER:
                     case LEVEL_THREE_MONEY_TOWER:
-                        MyBotGweh.Towers.MoneyTower.run(rc);
+                        main_bot.Towers.MoneyTower.run(rc);
                         break;
 
                     default:

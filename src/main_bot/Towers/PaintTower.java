@@ -1,4 +1,4 @@
-package MyBotGweh.Towers;
+package main_bot.Towers;
 
 import battlecode.common.*;
 
